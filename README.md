@@ -12,7 +12,7 @@ In my case, the VMware VM was configured with SCSI controller (Buslogic). I conf
     
 Change the disable_short_timers value to 1. You'll need to relink the kernel for this to take effect, but you can make the change before exporting from VMware, and when you relink the kernel later on in this guide, this change will be included as well. See https://www.scosales.com/ta/kb/127403.html for more info.
 
-Although the disable_short_timers fix takes care of the log warnings, the VM seems to be about 10% faster on CPU performance alone when running it as 486. I've tried several different processor types, and 486 beats them all. This was tested running on Xeon X5670 and X5675 CPUs. YMMV.
+Although the disable_short_timers fix takes care of the log warnings, the VM seems to be about 10% faster on CPU performance alone when running it as 486. I've tried several different processor types, and 486 beats them all (even host type). This was tested running on Xeon X5670 and X5675 CPUs. YMMV.
 
 You'll need the slha_btld drivers and the e1000 drivers:
     ftp://ftp.sco.com/pub/openserver5/507/drivers/slha_4.11.03/

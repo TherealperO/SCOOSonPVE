@@ -10,7 +10,7 @@ In my case, the VMware VM was configured with SCSI controller (Buslogic). I conf
 
     vi /etc/conf/pack.d/clock/space.c
     
-Change the disable_short_timers value to 1. See https://www.scosales.com/ta/kb/127403.html
+Change the disable_short_timers value to 1. You'll need to relink the kernel for this to take effect, but you can make the change before exporting from VMware, and when you relink the kernel later on in this guide, this change will be included as well. See https://www.scosales.com/ta/kb/127403.html for more info.
 
 You'll need the slha_btld drivers and the e1000 drivers:
     ftp://ftp.sco.com/pub/openserver5/507/drivers/slha_4.11.03/

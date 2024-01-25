@@ -4,7 +4,13 @@ This guide isn't a step-by-step on how to export/import the VM from VMware to PV
 
 **Note**: If your VMware VM uses IDE drives, I think this guide will still work if you substitute **wd** (IDE driver) where I used **blc** (Buslogic driver). In either case, make sure you mount the drives on the same IDs on both VMs.
 
-In my case, the VMware VM was configured with SCSI controller (Buslogic). I configured the PVE VM with an LSI 53C895A SCSI controller and mounted the disks on the same IDs as on the VMware VM. I used Intel E1000 network adapter. Set CPU type to 486 or PVE log fills up with "i8254 timer period limited to 200000 ns" messages.
+In my case, the VMware VM was configured with SCSI controller (Buslogic). I configured the PVE VM with an LSI 53C895A SCSI controller and mounted the disks on the same IDs as on the VMware VM. I used Intel E1000 network adapter.
+
+**Note 2:** ~~Set CPU type to 486 or log fills up with "i8254 timer period limited to 200000 ns" messages.~~ I think I've solved this by disabling short timers:
+
+    vi /etc/conf/pack.d/clock/space.c
+    
+Change the disable_short_timers value to 1. See https://www.scosales.com/ta/kb/127403.html
 
 You'll need the slha_btld drivers and the e1000 drivers:
     ftp://ftp.sco.com/pub/openserver5/507/drivers/slha_4.11.03/

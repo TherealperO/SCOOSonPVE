@@ -1,4 +1,4 @@
-I managed to get a VMware OpenServer 5.0.6a VM to run on Proxmox VE 7.
+I managed to get a VMware OpenServer 5.0.6a VM migrated to Proxmox VE 7.
 
 This guide isn't a step-by-step on how to export/import the VM from VMware to PVE. This guide picks up after all that's done.
 

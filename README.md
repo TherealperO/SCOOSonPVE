@@ -22,11 +22,19 @@ You'll need the slha_btld drivers and the e1000 drivers:
     ftp://ftp.sco.com/pub/openserver5/507/drivers/slha_4.11.03/
     ftp://ftp.sco.com/pub/openserver5/507/drivers/eeG_5.0.7g/
 
-I found the easiest way to get the drivers loaded without having to deal with floppy images is put them on the boot partition while still running on VMware. Download scoonpve.zip and extract to /stand. Make /stand writable first by issuing this command:
+I found the easiest way to get the drivers loaded without having to deal with floppy images is put them on the boot partition while still running on VMware. Download scoonpve.zip or scoonpve.tar and extract to /stand. Make /stand writable first by issuing this command:
 
     /etc/btmnt -w    
 
-Then extract the zip file before transferring the VM to PVE. Then you can remount read only with:
+Then extract the zip or tar file before transferring the VM to PVE:
+
+    unzip scoonpve.zip -d /stand/
+    
+or
+
+    tar xvf scoonpve.tar
+
+Then you can remount read only with:
 
     /etc/btmnt -d
 
